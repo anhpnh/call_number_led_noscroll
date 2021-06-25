@@ -5,7 +5,7 @@
 #include <Adafruit_GFX.h>
 #include <MD_Parola.h>
 
-const char *ssid     = "Free Wifi"; //Thay đổi tên wifi
+const char *ssid     = "TiDo"; //Thay đổi tên wifi
 const char *password = "5544332211"; //Thay đổi mật khẩu
 
 int pinCS = D4; // Attach CS to this pin, DIN to MOSI and CLK to SCK (cf http://arduino.cc/en/Reference/SPI )
@@ -98,10 +98,7 @@ void GetMessage() {
   webpage = ""; // don't delete this command, it ensures the server works reliably!
   append_page_header();
   String IPaddress = WiFi.localIP().toString();
-  //webpage += F("<h3>Enter the message to be displayed then Enter</h3><br>");
-  //webpage += "<form action=\"http://"+IPaddress+"\" method=\"POST\">";
-  //webpage += F("Enter the required message text:<br><br><input type='text' size='50' name='message' value='' >");
-  //webpage += F("</form><br/><br/>");
+  
   append_page_footer();
   server.send(200, "text/html", webpage); // Send a response to the client to enter their inputs, if needed, Enter=defaults
   if (server.args() > 0 ) { // Arguments were received
@@ -114,46 +111,9 @@ void GetMessage() {
 }
 
 void append_page_header() {
-  //webpage  = F("<!DOCTYPE html><html><head>"); // Change lauguage (en) as required
-  //webpage += F("<meta http-equiv='refresh' content='60'/>"); // 60-sec refresh time
-  //webpage += F("<meta http-equiv='content-type' content='text/html; charset=UTF-8'/>");
-  //webpage += F("<title>Message Board</title><style>");
-  //webpage += F("body {width:");
-  //webpage += SITE_WIDTH;
-  //webpage += F("px;margin:0 auto;font-family:arial;font-size:14px;text-align:center;color:#cc66ff;background-color:#F7F2Fd;}");
-  //webpage += F("ul{list-style-type:none;margin:0;padding:0;overflow:hidden;background-color:#d8d8d8;font-size:14px;}");
-  //webpage += F("li{float:left;border-right:1px solid #bbb;}last-child {border-right:none;}");
-  //webpage += F("li a{display: block;padding:2px 12px;text-decoration:none;}");
-  //webpage += F("li a:hover{background-color:#FFFFFF;}");
-  //webpage += F("section {font-size:16px;}");
-  //webpage += F("p {background-color:#E3D1E2;font-size:16px;}");
-  //webpage += F("div.header,div.footer{padding:0.5em;color:white;background-color:gray;clear:left;}");
-  //webpage += F("h1{background-color:#d8d8d8;font-size:26px;}");
-  //webpage += F("h2{color:#9370DB;font-size:22px;line-height:65%;}");
-  //webpage += F("h3{color:#9370DB;font-size:16px;line-height:55%;}");
-  //webpage += F("table{font-family:arial,sans-serif;font-size:16px;border-collapse:collapse;width:100%;height:100%;}");
-  //webpage += F("td {border:0px solid black;text-align:center;padding:2px;}");
-  //webpage += F("th {border:0px solid black;text-align:center;padding:2px;font-size:22px;}");
-  //webpage += F(".style1 {text-align:center;font-size:50px;background-color:#D8BFD8;height:57px;}");
-  //webpage += F(".style2 {text-align:center;font-size:16px;background-color:#ADD8E6;color:#0066ff;height:25px;}");
-  //webpage += F(".style3 {text-align:center;font-size:78px;background-color:#FFE4B5;height:107px;}");
-  //webpage += F(".style4 {text-align:center;font-size:16px;background-color:#FFE4B5;height:30px;}");
-  //webpage += F(".style5 {text-align:center;font-size:20px;background-color:#D9BFD9;}");
-  //webpage += F(".style6 td {border:0px solid black;text-align:right;padding:0px;font-size:14px;background-color:#B0C4DE;color:#0066ff;height:20px;}");
-  //webpage += F(".style7 {text-align:center;font-size:12px;background-color:#F7F2Fd;width:100%;}");
-  //webpage += F(".style8 {text-align:center;border:0px solid black;padding:2px;color:#990099;}");
-  //webpage += F(".style9 {text-align:center;font-size:14px;color:blue;}");
-  //webpage += F("img.imgdisplay {display:block;margin-left:auto;margin-right:auto;}");
-  //webpage += F("sup {vertical-align:super;font-size:26px;}");
-  //webpage += F("sup1{vertical-align:super;font-size:10px;}");
-  //webpage += F("</style></head><body><h1>Message Display Board ");
-  //webpage += version+"</h1>";
+ 
 }
 
 void append_page_footer(){ // Saves repeating many lines of code for HTML page footers
-  //webpage += F("<ul><li><a href='/'>Enter Message</a></li></ul>");
-  //webpage += "&copy;"+String(char(byte(0x40>>1)))+String(char(byte(0x88>>1)))+String(char(byte(0x5c>>1)))+String(char(byte(0x98>>1)))+String(char(byte(0x5c>>1)));
-  //webpage += String(char((0x84>>1)))+String(char(byte(0xd2>>1)))+String(char(0xe4>>1))+String(char(0xc8>>1))+String(char(byte(0x40>>1)));
-  //webpage += String(char(byte(0x64/2)))+String(char(byte(0x60>>1)))+String(char(byte(0x62>>1)))+String(char(0x6e>>1))+"</div>";
-  //webpage += F("</body></html>");
+  
 }
